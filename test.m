@@ -1,7 +1,7 @@
 
-%原function函数
-%UNTITLED 此处显示有关此函数的摘要
-%   此处显示详细说明
+%鍘焒unction鍑芥暟
+%UNTITLED 姝ゅ鏄剧ず鏈夊叧姝ゅ嚱鏁扮殑鎽樿
+%   姝ゅ鏄剧ず璇︾粏璇存槑
 
 
 %inlet conditions
@@ -133,9 +133,9 @@ while 1
 	   dp_h(i) = 69.31*Re_h(i)^(-0.87)*rho_h(i)*u_h(i)^2*delta_L/D_h_h;
 	   dp_c(i) = 69.31*Re_c(i)^(-0.87)*rho_c(i)*u_c(i)^2*delta_L/D_h_c;
        
-       %convection heat transfer
-       h_T_h(i) = Nu_h(i) * k_h(i) / d_p;
-       h_T_c(i) = Nu_c(i) * k_c(i) / d_p;
+       %convection heat transfer姝ゅ鎹㈢儹绯绘暟璁＄畻鏈夎
+       %h_T_h(i) = Nu_h(i) * k_h(i) / d_p;
+       %h_T_c(i) = Nu_c(i) * k_c(i) / d_p;
 
        Q_dot_hw(i) = h_T_h(i) * deltaA_h * (T_h_ave(i)-T_w(i+1));
        Q_dot_wc(i) = h_T_c(i) * deltaA_c * (T_w(i+1)-T_c_ave(i));
