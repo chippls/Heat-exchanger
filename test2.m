@@ -26,7 +26,7 @@ m_dot = 5.83/1000000;
 roughness = 0.000001;
 
 % [T_h, T_c, T_w] = dimesionlessCFHX(P_h_in,P_c_in,T_h_in, T_c_in, d1,d2,d3,d4, D_coil,cycles, m_dot, roughness)
-[T_h, T_c, T_w, Nu_h, Nu_c, Re_h, Re_c,P_h,P_c] = CFHX3(P_h_in,P_c_in,T_h_in, T_c_in, d1,d2,d3,d4, D_coil,cycles, m_dot, roughness);
+[T_h, T_c, T_w, Nu_h, Nu_c, Re_h, Re_c,P_h,P_c] = CFHX12(P_h_in,P_c_in,T_h_in, T_c_in, d1,d2,d3,d4, D_coil,cycles, m_dot, roughness);
 result_1 = [ Nu_h; Nu_c; Re_h; Re_c];
 result_2 = [T_h;T_c;P_h;P_c];
 xlswrite('result.xlsx',result_1);
