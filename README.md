@@ -6,4 +6,8 @@ Simulation of a CHX using Matlab </br>
 
 2020/05/15更新
 考虑辐射与压降，test2采用经验关联式进行逆流式套管换热器仿真的弯管修正。
-对于套管式换热器进行适当简化——通道内流体一维流动，壁面一维导热。但结果与实验偏差增大，推测是发射率过大。
+对于套管式换热器进行适当简化——通道内流体一维流动，壁面一维导热。
+
+2020/09/11 update
+New Matlab Code CFHX12 for calculating Tube-in-tube coiled heatexchanger, fitting well with the experiment data.
+Comparing with EES method, CFHX12 using the same number of dots and achieving high accuracy.
