@@ -1,7 +1,7 @@
 
-%Ô­functionº¯Êı
-%UNTITLED ´Ë´¦ÏÔÊ¾ÓĞ¹Ø´Ëº¯ÊıµÄÕªÒª
-%   ´Ë´¦ÏÔÊ¾ÏêÏ¸ËµÃ÷
+%åŸfunctionå‡½æ•°
+%UNTITLED æ­¤å¤„æ˜¾ç¤ºæœ‰å…³æ­¤å‡½æ•°çš„æ‘˜è¦
+%  æ¿ç¿…å¼æ¢çƒ­å™¨
 
 
 %inlet conditions
@@ -103,7 +103,7 @@ eps = 0.001;
 j = 0;
 while 1
     for i = 1:N
-       %¸ßÎÂ²à 
+       %é«˜æ¸©ä¾§ 
        T_h_old = T_h(i+1);
        T_h_ave(i) = (T_h(i) + T_h(i+1)) / 2;
       
@@ -120,13 +120,13 @@ while 1
 	   Re_h(i) = rho_h(i)*u_h(i)*D_h_c/mu_h(i);
 	   h_T_h(i)=Nu_h(i)*k_h(i)/D_h_h;
 	   dp_h(i) = 69.31*Re_h(i)^(-0.87)*rho_h(i)*u_h(i)^2*delta_L/D_h_h;
-       %¸üĞÂÎÂ¶È
+       %æ›´æ–°æ¸©åº¦
        T_h(i+1) = (T_h(i)*(2*cp_h(i)*m_h - h_T_h(i)*deltaA_h) + 2* h_T_h(i)*deltaA_h*T_w(i+1))/(2*cp_h(i)*m_h+h_T_h(i)*deltaA_h);
        T_h_error(i) = abs(T_h(i+1)-T_h_old);
        Q_dot_hw(i) = h_T_h(i) * deltaA_h * (T_h_ave(i)-T_w(i+1));
     end
        
-       %µÍÎÂ²à
+       %ä½æ¸©ä¾§
        for i = N:-1:1
        T_c_old = T_c(i);
        T_c_ave(i) = (T_c(i) + T_c(i+1)) / 2;
@@ -139,13 +139,13 @@ while 1
        Re_c(i) = rho_c(i)*u_c(i)*D_h_h/mu_c(i);
        h_T_c(i)=Nu_c(i)*k_c(i)/D_h_c;
        dp_c(i) = 69.31*Re_c(i)^(-0.87)*rho_c(i)*u_c(i)^2*delta_L/D_h_c;
-       %¸üĞÂÎÂ¶È
+       %æ›´æ–°æ¸©åº¦
         T_c(i) = (T_c(i+1)*(2*cp_c(i)*m_c - h_T_c(i)*deltaA_c) + 2* h_T_c(i)*deltaA_c*T_w(i+1))/(2*cp_c(i)*m_c+h_T_c(i)*deltaA_c);
        T_c_error(i) = abs(T_c(i)-T_c_old);
        Q_dot_wc(i) = h_T_c(i) * deltaA_c * (T_w(i+1)-T_c_ave(i));
        end
       
-      %»»ÈÈ°å 
+      %æ¢çƒ­æ¿ 
       T_w(1) = (T_h_in+T_c(1))/2;
       T_w(N+2) = (T_h(N+1)+T_c_in)/2; 
       for i=1:N
@@ -201,7 +201,7 @@ T_c_out = T_c(1)
 deltaP_h = sum(dp_h)
 deltaP_c = sum(dp_c)
 
-%Â©ÈÈ
+%æ¼çƒ­
 for i =1:N
     if i == 1
         Q_dot_con(1) = 2*lamda_w_m(1)*A_con*(T_w(1)-T_w(2))/delta_L;
